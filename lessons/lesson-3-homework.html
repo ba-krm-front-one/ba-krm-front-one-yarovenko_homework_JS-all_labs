@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>lesson-3-homework</title>
+</head>
+<body>
+<h3><a href="../index.html"><- Title homework Page JS</a></h3>
+<script>
+    /////////////////////////////// HOMEWORK 2////////////////////////
+    /*Вывести простые числа
+
+     Натуральное число, большее 1, называется простым, если оно ни на что не делится, кроме себя и 1.
+
+     Другими словами, n>1 – простое, если при делении на любое число от 2 до n-1 есть остаток.
+
+     Создайте функцию, которая выводит все простые числа из интервала, который задает пользователь.*/
+    ;(function () {
+     var min = prompt('Enter MIN number in interval');
+     var max = prompt('Enter MAX number in interval');
+     var count;
+
+     if (isNaN(min) || isNaN(max) || (min > max)) {
+     alert('Enter normal number!!! elsewhere it is not work!');
+     }
+     else {
+     document.write('<font color=red size="5"><center> Hello my friend, now we find you numbers.<br \/> </center> It is:</font>');
+
+         for (var i = min; i <= max; i++) {
+         FindCountNumbersBetweenMinMax();
+         }
+     }
+
+     function FindCountNumbersBetweenMinMax() {
+     for (let j = 1; j <= max; j++) {
+         if (i % j == 0) {
+         count++;
+            }
+        }
+     if (count == 2) {
+     document.write("<br \/>" + i);
+         }
+     count = 0;
+     }
+    })();
+    ///////////////////////////////----------- HOMEWORK 2--------////////////////////////
+
+</script>
+</body>
+</html>
