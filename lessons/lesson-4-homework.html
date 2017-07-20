@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>lesson-4-homework</title>
+</head>
+<body>
+<h3><a href="../index.html"><- Title homework Page JS</a></h3>
+<script>
+    /////////////////////////////// HOMEWORK 3////////////////////////
+    /*Создайте обьект Unils, в котором будет метод map, который мы рассматривали на уроке, метод для генерации случайных
+     чисел, и метод для возведения числа в квадрате и метод для генерации массива из чисел в диапазоне, введенном пользователем.
+     Далее получите от пользователя два числла задающих диапазон, в котором будут числа нашего массива, генерируемого
+     выше описанной функцией.
+     Сгенерированный массив передайте в метод map обьекта Unils для возведения всех элеметов массива в крадрат.
+     Новый массив с числами возведенными квадрат выведите в консоль.
+     */
+    ;(function() {
+        var Array = [];
+        var min = Number(prompt('Enter digit Min'));
+        var max = Number(prompt('Enter digit Max'));
+        var length = Number(prompt('Enter length of massiv'));
+
+        if (isNaN(min) || isNaN(max) || min > max || max<0 || min<0) {
+            alert('Enter normal number!!! maza facka');
+        }
+        else{
+
+            function getRandomInt(min, max) {
+                return Math.floor(Math.random() * (max - min + 1)) + min;
+            }
+
+            function square(x) {
+                return x * x;
+            }
+
+            function generateMassiv (){
+                for(let i=0; i<length; i++){
+                    Array[i] = getRandomInt(min, max);
+                }
+                return Array;
+            }
+
+            function map(callBack, theArray) {
+                let newArray = [];
+                theArray.forEach(function(element) {
+                    let processedElement = callBack(element);
+                    newArray.push(processedElement)
+                });
+                return newArray;
+            }
+
+            let Units = map(square, generateMassiv(Array));
+            document.write(Units);
+            console.log(Units);
+        }
+    })();
+
+    ///////////////////////////////----------- HOMEWORK 3--------////////////////////////
+
+</script>
+
+</body>
+</html>
